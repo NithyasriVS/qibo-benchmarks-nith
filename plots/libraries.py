@@ -32,6 +32,7 @@ def plot_libraries(libraries, cpu_data, gpu_data, quantity, nqubits,
                    legend=False, logscale=True, fusion=False, save=False):
     matplotlib.rcParams["font.size"] = fontsize
     # Process data
+    cpu_data = cpu_data.copy() #added on 4 march 11.04pm
     gpu_data = gpu_data.copy()
     gpu_data["library"] += " GPU"
     data = pd.concat([cpu_data, gpu_data])
