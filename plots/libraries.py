@@ -50,7 +50,7 @@ def plot_libraries(libraries, cpu_data, gpu_data, quantity, nqubits,
     for library in libraries:
         if library.has(precision):
             condition = base_condition & (data["library"] == library.name)
-            height = np.array([float(data[condition & (data["circuit"] == c)][quantity]) for c in circuits])
+            height = np.array([float(data[condition & (data["circuit"] == c)][quantity]).iloc[0] for c in circuits])
             plt.bar(xvalues + next(ws), height, color=library.color, align="center", 
                     width=width, alpha=library.alpha, label=library.label, 
                     log=logscale, edgecolor='w', hatch=library.hatch)
