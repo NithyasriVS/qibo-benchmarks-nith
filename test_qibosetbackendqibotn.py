@@ -1,3 +1,3 @@
 import qibo
 
-qibo.set_backend("qibotn")
+qibo.set_backend("qibotn", platform = "quimb")
