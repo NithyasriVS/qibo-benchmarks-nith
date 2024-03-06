@@ -15,10 +15,10 @@ computation_settings = {
     "expectation_enabled": False,
 }
 
-qibo.set_backend(
+'''qibo.set_backend(
     backend="qibotn", platform="qutensornet", runcard=computation_settings
-)  # cuQuantum
-# qibo.set_backend(backend="qibotn", platform="QuimbBackend", runcard=computation_settings) #quimb
+)  # cuQuantum'''
+qibo.set_backend(backend="qibotn", platform="QuimbBackend", runcard=computation_settings) #quimb
 
 
 # Construct the circuit
@@ -27,7 +27,10 @@ c = Circuit(2)
 c.add(gates.H(0))
 c.add(gates.H(1))
 
-# Execute the circuit and obtain the final state
-result = c()
+ein = qibotn.QiboCircuitToEinsum(c)
 
-print(result.state())
+# Execute the circuit and obtain the final state
+#result = c()
+
+#print(result.state())
+print("einsum ",ein)
