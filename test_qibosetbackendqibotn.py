@@ -15,10 +15,10 @@ computation_settings = {
     "expectation_enabled": False,
 }
 
-'''qibo.set_backend(
+qibo.set_backend(
     backend="qibotn", platform="qutensornet", runcard=computation_settings
-)  # cuQuantum'''
-qibo.set_backend(backend="qibotn", platform="QuimbBackend", runcard=computation_settings) #quimb
+)  # cuQuantum
+#qibo.set_backend(backend="qibotn", platform="QuimbBackend", runcard=computation_settings) #quimb
 
 
 # Construct the circuit
