@@ -27,10 +27,7 @@ c = Circuit(2)
 c.add(gates.H(0))
 c.add(gates.H(1))
 
-#ein = qibotn.QiboCircuitToEinsum(c)
-
 # Execute the circuit and obtain the final state
 result = c()
 
 print(result.state())
-#print("einsum ",ein)
